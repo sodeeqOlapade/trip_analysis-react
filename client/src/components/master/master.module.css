@@ -1,0 +1,64 @@
+.masterContainer {
+  border: 2px solid #cccccc;
+  width: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+  box-shadow: 3px 3px 7px 4px #ccc;
+  color: #4087f5;
+}
+
+.masterContainer:hover {
+  border: 2.5px solid #f9b822;
+  cursor: pointer;
+  /* color: #4087f5; */
+}
+
+h4,
+h5 {
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.icon {
+  vertical-align: middle;
+  height: 35px;
+}
+
+.spanIcon {
+  vertical-align: middle;
+  height: 45px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.avatartContainer {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #4087f5;
+  vertical-align: middle;
+  color: white;
+}
+
+.driverDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  vertical-align: middle;
+  text-align: center;
+  color: #4087f5;
+}
+
+/* .driverDetails:hover{
+    color: #4087f5;
+} */

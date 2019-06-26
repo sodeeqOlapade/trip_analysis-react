@@ -16,7 +16,7 @@
   margin-left: 50px;
   font-weight: 700px;
   font-size: 25px;
-  color: #1f63f2;
+  color: #4087f5;
 }
 
 .brand:hover {
@@ -25,12 +25,8 @@
 
 a {
   text-decoration: none;
-  color: #1f63f2;
+  color: #4087f5;
   font-weight: bold;
-}
-
-a:hover {
-  color: #db3323;
 }
 
 .headerLink {
@@ -38,6 +34,10 @@ a:hover {
   flex-direction: row;
   width: 100px;
   justify-content: flex-start;
+}
+
+.headerLink:hover {
+  color: #db3323;
 }
 
 .listItem {

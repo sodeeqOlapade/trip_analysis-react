@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/header/header';
 import './App.css';
+import Drivers from './pages/drivers/drivers';
 
 fetch('/api/trips')
   .then(data => {
@@ -14,7 +15,7 @@ fetch('/api/trips')
   });
 
 function App() {
-  return <Header />;
+  return <Drivers />;
 }
 
 export default App;
