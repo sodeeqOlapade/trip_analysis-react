@@ -9,7 +9,12 @@ function Master(props) {
       <div className={styles.avatartContainer}>
         <FontAwesomeIcon icon={faUser} className={styles.icon} />
       </div>
-      <a href="#">
+      <a
+        href="#"
+        onClick={() => {
+          props.onClick(props.driver.driverID);
+        }}
+      >
         <div className={styles.driverDetails}>
           <h4>{props.driver.name}</h4>
           <h5>{props.driver.gender}</h5>

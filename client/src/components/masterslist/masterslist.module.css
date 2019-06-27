@@ -2,4 +2,6 @@
   width: 380px;
   background: white;
   box-shadow: 3px 3px 10px 6px #ccc;
+  height: 100vh;
+  overflow-y: scroll;
 }

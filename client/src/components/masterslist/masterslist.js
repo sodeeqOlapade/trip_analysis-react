@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styles from './masterslist.module.css';
 import Master from '../../components/master/master';
 
-function Masterlist() {
+function Masterlist(props) {
   const [mastersList, setMastersList] = useState([]);
+
+  const handleClick = driverID => {
+    console.log('driver clicked has id: ', driverID);
+    props.processClick(driverID);
+  };
 
   useEffect(() => {
     fetch('/api/drivers')
@@ -21,7 +26,7 @@ function Masterlist() {
   return (
     <section className={styles.mastersContainer}>
       {mastersList.map(driver => {
-        return <Master driver={driver} />;
+        return <Master driver={driver} onClick={handleClick} />;
       })}
     </section>
   );
