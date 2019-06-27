@@ -11,8 +11,8 @@ function Master(props) {
       </div>
       <a href="#">
         <div className={styles.driverDetails}>
-          <h4>drivernamefromprops</h4>
-          <h5>drivergenderfromprops</h5>
+          <h4>{props.driver.name}</h4>
+          <h5>{props.driver.gender}</h5>
         </div>
       </a>
       <FontAwesomeIcon icon={faGreaterThan} className={styles.spanIcon} />

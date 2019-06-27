@@ -1,5 +1,5 @@
 .masterContainer {
-  border: 2px solid #cccccc;
+  /* border: 1px solid #cccccc; */
   width: 300px;
   margin: 20px;
   display: flex;
@@ -9,12 +9,12 @@
   border-radius: 8px;
   padding: 20px;
   background: white;
-  box-shadow: 3px 3px 7px 4px #ccc;
+  box-shadow: 3px 3px 7px 1px #ccc;
   color: #4087f5;
 }
 
 .masterContainer:hover {
-  border: 2.5px solid #f9b822;
+  border: 2px solid #f9b822;
   cursor: pointer;
   /* color: #4087f5; */
 }

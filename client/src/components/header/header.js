@@ -7,7 +7,7 @@ import {
   faClipboardList,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Header() {
+function Header(props) {
   return (
     <header className={styles.header}>
       <a href="#">
