@@ -33,7 +33,6 @@ function Drivers() {
   }, []);
 
   const getClickedDriver = driverID => {
-    console.log('erwijjklDriver', driverID);
     fetch(`/api/driver/${driverID}`)
       .then(response => {
         return response.json();
