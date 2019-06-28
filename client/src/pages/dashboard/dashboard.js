@@ -10,7 +10,9 @@ function Dashboard(props) {
 
       <div className={styles.banner} />
       <div className={styles.overlay} />
-      <Barchart />
+      <Barchart
+        dataForGraph={['billedTotal', 'cashBilledTotal', 'nonCashBilledTotal']}
+      />
     </>
   );
 }

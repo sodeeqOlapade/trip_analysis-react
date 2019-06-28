@@ -10,7 +10,7 @@ const {
   Legend,
 } = Recharts;
 
-function Barchart() {
+function Barchart(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -19,16 +19,14 @@ function Barchart() {
         return response.json();
       })
       .then(({ data }) => {
-        const { male, female, noOfCashTrips, noOfNonCashTrips, ...rest } = data;
-
-        const objects = Object.entries(rest).map(stat => {
-          let obj = {};
-          obj['name'] = stat[0];
-          obj['uv'] = stat[1];
+        const graphData = props.dataForGraph.map(prop => {
+          const obj = {};
+          obj['name'] = prop;
+          obj['uv'] = data[prop];
           return obj;
         });
 
-        setData(objects);
+        setData(graphData);
       })
       .catch(err => {
         console.log(`Error: ${err}`);
@@ -37,8 +35,8 @@ function Barchart() {
 
   return (
     <BarChart
-      width={600}
-      height={150}
+      width={500}
+      height={300}
       data={data}
       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
     >
@@ -47,7 +45,7 @@ function Barchart() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="uv" fill="red" width="10px" />
+      <Bar dataKey="uv" fill="#4087f5" barSize={30} />
     </BarChart>
   );
 }
