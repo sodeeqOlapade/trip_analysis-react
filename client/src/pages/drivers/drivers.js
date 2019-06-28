@@ -4,7 +4,7 @@ import Header from '../../components/header/header';
 import Masterlist from '../../components/masterslist/masterslist';
 import Driverdetails from '../../components/driverdetails/driverdetails';
 
-const driversPromise = fetch('/api/trips');
+// const driversPromise = fetch('/api/trips');
 
 function Drivers() {
   const [driverData, setDriverData] = useState({

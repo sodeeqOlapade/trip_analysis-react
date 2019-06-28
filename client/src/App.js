@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './components/header/header';
 import './App.css';
 import Drivers from './pages/drivers/drivers';
+import Dashboard from '././pages/dashboard/dashboard';
 
 // fetch('/api/trips')
 //   .then(data => {
@@ -15,7 +15,7 @@ import Drivers from './pages/drivers/drivers';
 //   });
 
 function App() {
-  return <Drivers />;
+  return <Dashboard />;
 }
 
 export default App;
