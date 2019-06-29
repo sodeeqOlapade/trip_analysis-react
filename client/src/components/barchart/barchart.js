@@ -25,7 +25,6 @@ function Barchart(props) {
           obj['uv'] = data[prop];
           return obj;
         });
-
         setData(graphData);
       })
       .catch(err => {
