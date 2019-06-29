@@ -1,0 +1,30 @@
+th {
+  width: 250px;
+}
+
+td {
+  /* color: rgb(121, 119, 119); */
+  color: #4087f5;
+}
+
+.icon {
+  color: rgb(59, 59, 59);
+}
+
+table {
+  margin-top: 20px;
+  text-align: left;
+  background: white;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+thead {
+  background: #ebebeb;
+  color: #8884d8;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 16px;
+}
