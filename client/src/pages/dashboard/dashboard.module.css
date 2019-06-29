@@ -5,11 +5,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
+  position: relative;
 }
 
 .overlay {
-  position: fixed; /* Sit on top of the page content */
+  position: absolute; /* Sit on top of the page content */
   display: block; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 500px; /* Full height (cover the whole page) */
@@ -18,31 +18,65 @@
     255,
     255,
     255,
-    0.7
+    0.2
   ); /* Black background with opacity */
 }
 
 .graphs {
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  border: 3px solid green;
   width: 100%;
-  height: 500px;
-  background: #fff;
+  height: 300px;
   text-align: center;
+  position: absolute;
+  top: 21px;
 }
 
 .card {
   background: #fff;
-  border: 1px solid red;
-  width: 550px;
+  width: 500px;
+  border-radius: 10px;
+  border: 2px solid #8884d8;
+  box-shadow: 3px 3px 7px 3px #ccc;
+  margin: 0px 10px;
   height: 350px;
   text-align: center;
+  z-index: 20;
 }
 
-.pie {
-  vertical-align: middle;
-  display: none;
+.card:hover {
+  border: 2px solid coral;
+}
+
+.gender {
+  background: #fff;
+  width: 400px;
+  border-radius: 10px;
+  border: 2px solid #db3323;
+  height: 350px;
+  box-shadow: 3px 3px 7px 3px #ccc;
+  text-align: center;
+  z-index: 20;
+}
+
+.gender:hover {
+  border: 2px solid coral;
+}
+
+.trips {
+  background: #fff;
+  border-radius: 10px;
+  width: 450px;
+  box-shadow: 3px 3px 7px 3px #ccc;
+  height: 350px;
+  border: 2px solid #f9b822;
+  text-align: center;
+  z-index: 20;
+}
+
+.trips:hover {
+  border: 2px solid coral;
 }

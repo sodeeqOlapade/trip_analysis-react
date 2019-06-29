@@ -13,7 +13,7 @@ function Dashboard(props) {
       <div className={styles.overlay} />
 
       <div className={styles.graphs}>
-        <div className={styles.card}>
+        <div className={styles.gender}>
           <Piechart className={styles.pie} dataForGraph={['male', 'female']} />
         </div>
         <div className={styles.card}>
@@ -25,7 +25,7 @@ function Dashboard(props) {
             ]}
           />
         </div>
-        <div className={styles.card}>
+        <div className={styles.trips}>
           <Piechart dataForGraph={['noOfCashTrips', 'noOfNonCashTrips']} />
         </div>
       </div>
