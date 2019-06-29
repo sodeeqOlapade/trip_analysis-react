@@ -2,16 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as sentry from '@sentry/browser';
 
-// import { Route, BrowserRouter as Router } from 'react-router-dom';
-
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import App from './App';
-import Drivers from './pages/drivers/drivers';
-import Dashboard from './pages/dashboard/dashboard';
 import * as serviceWorker from './serviceWorker';
 
 if (process.env.NODE_ENV === 'production') {
@@ -41,7 +37,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Dashboard />
+    <App />
   </ApolloProvider>,
   document.getElementById('root'),
 );

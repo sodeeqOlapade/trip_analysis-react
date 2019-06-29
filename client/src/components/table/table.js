@@ -70,7 +70,7 @@ function Table() {
               </td>
               <td>{data.driver}</td>
               <td>{data.username}</td>
-              <td>{data.billedAmount}</td>
+              <td className={styles.amount}>{data.billedAmount}</td>
             </tr>
           );
         })}

@@ -8,7 +8,18 @@ td {
 }
 
 .icon {
-  color: rgb(59, 59, 59);
+  /* color: rgb(153, 151, 151); */
+  border: 0.5px solid #4087f5;
+  width: 50px;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+.icon:hover {
+  background: #4087f5;
+  color: white;
+  cursor: pointer;
 }
 
 table {
@@ -26,5 +37,10 @@ thead {
 th,
 td {
   border-bottom: 1px solid #ddd;
-  padding: 16px;
+  padding: 6px;
+}
+
+.amount {
+  color: #00c49f;
+  font-weight: bold;
 }
