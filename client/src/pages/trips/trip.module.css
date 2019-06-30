@@ -86,15 +86,3 @@ h2 {
 .card:nth-child(3) {
   background: #54b158;
 }
-.title {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-}
-
-.titleIcon {
-  height: 70px;
-  width: 70px;
-  margin-right: 10px;
-}

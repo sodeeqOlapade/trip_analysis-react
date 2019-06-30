@@ -9,30 +9,28 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
+import Card from '../../components/card/card';
+
 function Trips({ match }) {
   const [trip, setTrip] = useState({
-    tripID: 'b4075407-b1ac-42f6-a915-fe3e96e67e06',
-    driverID: '9e14d22c-8f4f-4df8-83c1-91578fcde29a',
-    isCash: false,
-    billedAmount: '3,405.03',
-    user: {
-      name: 'Sargent Clemons',
-      gender: 'male',
-      company: 'VIAGRAND',
-      email: 'sargentclemons@viagrand.com',
-      phone: '+234 809-484-1334',
-    },
-    created: '2019-04-20T03:13:58+01:00',
-    pickup: {
-      address: '767 Furman Avenue, Dunnavant, Delaware, 5683',
-      latitude: 0.627179,
-      longitude: 41.869778,
-    },
-    destination: {
-      address: '28 Georgia Avenue, Rose, Tennessee, 7467',
-      latitude: -85.156963,
-      longitude: 179.578198,
-    },
+    tripObj: [
+      { tripID: 'b4075407-b1ac-42f6-a915-fe3e96e67e06' },
+      { driverID: '9e14d22c-8f4f-4df8-83c1-91578fcde29a' },
+      { time: '2019-04-20T03:13:58+01:00' },
+      { date: '2019-04-20T03:13:58+01:00' },
+      { pickup: '767 Furman Avenue, Dunnavant, Delaware, 5683' },
+      { destination: '28 Georgia Avenue, Rose, Tennessee, 7467' },
+    ],
+    paymentObj: [{ Means: false }, { Amount: '3405.03' }],
+    userObj: [
+      {
+        name: 'Sargent Clemons',
+      },
+      { gender: 'male' },
+      { company: 'VIAGRAND' },
+      { email: 'sargentclemons@viagrand.com' },
+      { phone: '+234 809-484-1334' },
+    ],
   });
 
   useEffect(() => {
@@ -42,14 +40,41 @@ function Trips({ match }) {
       })
       .then(({ data }) => {
         const trip = { ...data[0] };
-        setTrip(trip);
+
+        const { isCash, billedAmount } = trip;
+        const paymentObj = [];
+        paymentObj.push({ Means: isCash ? 'Cash' : 'Non-Cash' });
+        paymentObj.push({ Amount: billedAmount });
+
+        const {
+          tripID,
+          driverID,
+          created,
+          pickup: { address },
+          destination: { address: address1 },
+        } = trip;
+        const tripObj = [];
+        tripObj.push({ TripID: tripID });
+        tripObj.push({ DriverID: driverID });
+        tripObj.push({ Time: new Date(created).toLocaleTimeString() });
+        tripObj.push({ Date: new Date(created).toLocaleDateString() });
+        tripObj.push({ Pickup: address });
+        tripObj.push({ Destination: address1 });
+
+        const { name, gender, company, email, phone } = trip.user;
+        const userObj = [];
+        userObj.push({ Name: name });
+        userObj.push({ Gender: gender });
+        userObj.push({ Company: company });
+        userObj.push({ Email: email });
+        userObj.push({ Phone: phone });
+
+        setTrip({ tripObj, userObj, paymentObj });
       })
       .catch(err => {
         console.log(`Error: ${err}`);
       });
   }, []);
-
-  console.log('trip', trip);
 
   return (
     <>
@@ -65,43 +90,19 @@ function Trips({ match }) {
         </div>
         <div className={styles.cards}>
           <div className={styles.card}>
-            <span className={styles.title}>
-              <FontAwesomeIcon icon={faCar} className={styles.titleIcon} />
-              <h2>TRIP</h2>
-            </span>
-
-            <h4>Trip-ID: {trip.tripID}</h4>
-            <h4>Driver-ID: {trip.driverID}</h4>
-            <h4>Time: {new Date(trip.created).toLocaleTimeString()}</h4>
-            <h4>Date: {new Date(trip.created).toLocaleDateString()}</h4>
-            <h4>Pickup Address: {trip.pickup.address}</h4>
-            <h4>Destination Address: {trip.destination.address}</h4>
+            <Card icon={faCar} category={'trip'} data={trip.tripObj} />
           </div>
 
           <div className={styles.card}>
-            <span className={styles.title}>
-              <FontAwesomeIcon icon={faUser} className={styles.titleIcon} />
-              <h2>USER</h2>
-            </span>
-
-            <h4>Name: {trip.user.name}</h4>
-            <h4>Gender: {trip.user.gender}</h4>
-            <h4>Phone Number: {trip.user.phone}</h4>
-            <h4>Email: {trip.user.email}</h4>
-            <h4>Company: {trip.user.company}</h4>
+            <Card icon={faUser} category={'user'} data={trip.userObj} />
           </div>
 
           <div className={styles.card}>
-            <span className={styles.title}>
-              <FontAwesomeIcon
-                icon={faMoneyCheck}
-                className={styles.titleIcon}
-              />
-              <h2>PAYMENT</h2>
-            </span>
-
-            <h4>Means of Payment: {trip.isCash ? 'Cash' : 'Non-Cash'}</h4>
-            <h4>Amount: {trip.billedAmount}</h4>
+            <Card
+              icon={faMoneyCheck}
+              category={'payment'}
+              data={trip.paymentObj}
+            />
           </div>
         </div>
       </div>
