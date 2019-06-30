@@ -13,39 +13,30 @@ function Header(props) {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <a href="#">
-          <h4 className={styles.brand}>Analytics</h4>
-        </a>
+        <h4 className={styles.brand}>Analytics</h4>
       </Link>
       <nav className={styles.mainNavigation}>
         <ul className={styles.listItems}>
           <li className={styles.listItem}>
-            <Link to="/">
-              <a href="#" className={styles.headerLink}>
-                <FontAwesomeIcon
-                  icon={faClipboardList}
-                  className={styles.icon}
-                />
-                <span>Dashboard</span>
-              </a>
+            <Link to="/" className={styles.headerLink}>
+              <FontAwesomeIcon icon={faClipboardList} className={styles.icon} />
+              <span>Dashboard</span>
             </Link>
           </li>
           <li className={styles.listItem}>
-            <Link to="/drivers">
-              <a href="#" className={styles.headerLink}>
-                <FontAwesomeIcon icon={faUser} className={styles.icon} />
-                <span>Drivers</span>
-              </a>
+            <Link to="/drivers" className={styles.headerLink}>
+              <FontAwesomeIcon icon={faUser} className={styles.icon} />
+              <span>Drivers</span>
             </Link>
           </li>
-          <li className={styles.listItem}>
+          {/* <li className={styles.listItem}>
             <Link to="/trips">
               <a href="#" className={styles.headerLink}>
                 <FontAwesomeIcon icon={faCar} className={styles.icon} />
                 <span>Trips</span>
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

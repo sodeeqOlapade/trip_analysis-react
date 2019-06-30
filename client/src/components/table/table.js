@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './table.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Table() {
   const [tableData, setTableData] = useState([]);
@@ -22,6 +23,7 @@ function Table() {
           .then(({ data }) => {
             const dataForTable = [...data].map(trip => {
               const tableData = {};
+              tableData['tripID'] = trip.tripID;
               tableData['username'] = trip.user.name;
               tableData['billedAmount'] = trip.billedAmount;
               const driver = [...drivers].find(
@@ -59,14 +61,16 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        {tableData.map(data => {
+        {tableData.map((data, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>
-                <div className={styles.icon}>
-                  <FontAwesomeIcon icon={faInfoCircle} />
-                  <span>-Info</span>
-                </div>
+                <Link to={`trip/${data.tripID}`}>
+                  <div className={styles.icon}>
+                    <FontAwesomeIcon icon={faInfoCircle} />
+                    <span>-Info</span>
+                  </div>
+                </Link>
               </td>
               <td>{data.driver}</td>
               <td>{data.username}</td>

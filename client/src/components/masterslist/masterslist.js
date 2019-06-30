@@ -25,8 +25,8 @@ function Masterlist(props) {
 
   return (
     <section className={styles.mastersContainer}>
-      {mastersList.map(driver => {
-        return <Master driver={driver} onClick={handleClick} />;
+      {mastersList.map((driver, index) => {
+        return <Master key={index} driver={driver} onClick={handleClick} />;
       })}
     </section>
   );

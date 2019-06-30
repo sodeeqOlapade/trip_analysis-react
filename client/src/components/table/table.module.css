@@ -1,5 +1,6 @@
 th {
   width: 250px;
+  padding: 6px;
 }
 
 td {
@@ -10,7 +11,7 @@ td {
 .icon {
   /* color: rgb(153, 151, 151); */
   border: 0.5px solid #4087f5;
-  width: 50px;
+  width: 60px;
   border-radius: 5px;
   padding: 8px;
   margin-left: 5px;
