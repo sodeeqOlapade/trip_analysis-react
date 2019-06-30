@@ -16,7 +16,7 @@ function Driverdetails(props) {
         </h4>
         <h4>
           <span>D.O.B : </span>
-          {props.driver.DOB}
+          {new Date(props.driver.DOB).toLocaleDateString()}
         </h4>
         <h4>
           <span>Phone Number : </span>

@@ -60,7 +60,10 @@ function Drivers() {
             <div className={styles.detailsBanner} />
             <div className={styles.detailsFooter} />
           </div>
-          <Driverdetails driver={driverData} />
+          <Driverdetails
+            className={styles.driverDertails}
+            driver={driverData}
+          />
         </div>
       </div>
     </>

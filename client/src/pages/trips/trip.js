@@ -72,8 +72,8 @@ function Trips({ match }) {
 
             <h4>Trip-ID: {trip.tripID}</h4>
             <h4>Driver-ID: {trip.driverID}</h4>
-            <h4>Time: {trip.created}</h4>
-            <h4>Date: {trip.created}</h4>
+            <h4>Time: {new Date(trip.created).toLocaleTimeString()}</h4>
+            <h4>Date: {new Date(trip.created).toLocaleDateString()}</h4>
             <h4>Pickup Address: {trip.pickup.address}</h4>
             <h4>Destination Address: {trip.destination.address}</h4>
           </div>

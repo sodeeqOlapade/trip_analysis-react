@@ -4,7 +4,7 @@
   position: absolute;
   bottom: 35px;
   right: 35px;
-  box-shadow: 3px 3px 7px 8px #ccc;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background: white;
   padding: 20px;
 }
